@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.osbilisim.aops.TimeElapsed;
 import com.osbilisim.inputs.PaymentRequest;
 import com.osbilisim.output.BaseResponse;
 
@@ -26,7 +27,7 @@ public class PaymentController {
 	private static final int AUTH_FAILURE = 102;
 
 	@RequestMapping(value = "/pay", method = RequestMethod.POST)
-
+	@TimeElapsed
 	public BaseResponse pay(@RequestParam(value = "key") String key, @RequestBody PaymentRequest request) {
 
 		BaseResponse response = new BaseResponse();

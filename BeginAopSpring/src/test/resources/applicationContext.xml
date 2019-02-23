@@ -18,5 +18,8 @@
        <context:annotation-config />
   <context:component-scan base-package="com.osbilisim.controllers" />
   <bean id="paymentController" class="com.osbilisim.controllers.PaymentController"/>
+  
+   <aop:aspectj-autoproxy />
 
+        <bean id="timeElapsed" class="com.osbilisim.aop.managements.TimeElapsedCalculate" />
 </beans>

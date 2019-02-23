@@ -19,6 +19,8 @@ public class PaymentControllerTest {
 	@Test
 	public void payTest() {
 		PaymentRequest request = new PaymentRequest();
+		request.setDiscount(0.0);
+		request.setItemId("asddasdasd");
 		BaseResponse response = paymentController.pay("asd", request);
 		System.out.println(response.getStatus());
 	}
