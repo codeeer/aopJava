@@ -24,4 +24,5 @@ public class ApplicationConfiguration {
 	public TimeElapsedCalculate timeElapsedCalculate() {
 		return new TimeElapsedCalculate();
 	}
+
 }

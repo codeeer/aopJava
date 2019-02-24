@@ -27,4 +27,5 @@ public class ApplicationConfigurationTest {
 	public TimeElapsedCalculate timeElapsed() {
 		return new TimeElapsedCalculate();
 	}
+
 }

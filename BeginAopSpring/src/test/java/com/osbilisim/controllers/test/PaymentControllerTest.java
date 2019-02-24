@@ -17,12 +17,20 @@ public class PaymentControllerTest {
 	PaymentController paymentController ;
 	
 	@Test
-	public void payTest() {
+	public void payTest()  {
 		PaymentRequest request = new PaymentRequest();
+		request.setUserId(2);
 		request.setDiscount(0.0);
 		request.setItemId("asddasdasd");
-		BaseResponse response = paymentController.pay("asd", request);
-		System.out.println(response.getStatus());
+		BaseResponse response;
+		try {
+			response = paymentController.pay("asd", request);
+			System.out.println("response: "+response.getStatus());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+		
+		}
+		
 	}
 
 }

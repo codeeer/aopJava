@@ -28,13 +28,16 @@ public class PaymentController {
 
 	@RequestMapping(value = "/pay", method = RequestMethod.POST)
 	@TimeElapsed
-	public BaseResponse pay(@RequestParam(value = "key") String key, @RequestBody PaymentRequest request) {
+	public BaseResponse pay(@RequestParam(value = "key") String key, @RequestBody PaymentRequest request) throws Exception  {
 
 		BaseResponse response = new BaseResponse();
 
+			int userId = request.getUserId();
+			createException(userId);
+			 
 		if (sharedKey.equalsIgnoreCase(key)) {
 
-			int userId = request.getUserId();
+		
 
 			String itemId = request.getItemId();
 
@@ -60,6 +63,10 @@ public class PaymentController {
 
 		return response;
 
+	}
+	@TimeElapsed
+	public void createException(int a) throws Exception {
+		a/=a;
 	}
 
 }
